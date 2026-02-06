@@ -1,100 +1,25 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My 10 Game Stash</title>
+    <title>Ultimate Game Stash</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0f0f0f; color: #eee; margin: 0; padding: 20px; }
-        h1 { color: #00d4ff; text-shadow: 0 0 10px rgba(0,212,255,0.5); }
-        /* Grid settings for 10 cards */
-        .grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-            gap: 25px; 
-            max-width: 1200px; 
-            margin: 40px auto; 
-        }
-        .game-card { 
-            background: #1a1a1a; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-        }
-        .game-card:hover { 
-            transform: translateY(-8px); 
-            border-color: #00d4ff; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-        .game-card img { width: 100%; height: 120px; object-fit: cover; background: #222; }
-        .game-info { padding: 15px; font-weight: bold; }
-        a { text-decoration: none; color: inherit; }
+        body { display: flex; height: 100vh; margin: 0; font-family: sans-serif; background: #111; color: white; }
+        #sidebar { width: 280px; background: #222; overflow-y: auto; padding: 15px; border-right: 2px solid #444; }
+        #game-container { flex-grow: 1; border: none; background: #000; }
+        button { display: block; width: 100%; padding: 10px; margin: 5px 0; background: #333; color: white; border: 1px solid #555; cursor: pointer; text-align: left; border-radius: 4px; font-size: 14px; }
+        button:hover { background: #444; border-color: #00bcff; }
+        h2 { color: #00bcff; margin-top: 0; }
     </style>
 </head>
 <body>
-
-    <h1>🎮 My Ultimate Game Stash</h1>
-    <div class="grid">
-        
-        <!-- Repeat this block for each of your 10 games -->
-        <!-- Just change the 'GAME_FOLDER' and 'Game Name' for each one -->
-
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 1">
-            <div class="game-info">Super Game 1</div>
-        </a>
-
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 2">
-            <div class="game-info">Epic Game 2</div>
-        </a>
-
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 3">
-            <div class="game-info">Action Game 3</div>
-        </a>
-
-        <!-- ... Add 7 more here following the same pattern ... -->
-        
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 3">
-            <div class="game-info">Action Game 3</div>
-        </a>
-        
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 3">
-            <div class="game-info">Action Game 3</div>
-        </a>
-        
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 3">
-            <div class="game-info">Action Game 3</div>
-        </a>
-        
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 3">
-            <div class="game-info">Action Game 3</div>
-        </a>
-        
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 3">
-            <div class="game-info">Action Game 3</div>
-        </a>
-        
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 3">
-            <div class="game-info">Action Game 3</div>
-        </a>
-        
-        <a href="https://cdn.jsdelivr.net" class="game-card">
-            <img src="https://cdn.jsdelivr.net" alt="Game 3">
-            <div class="game-info">Action Game 3</div>
-        </a>
-        
-
+    <div id="sidebar">
+        <h2>🎮 13 Games</h2>
+        <button onclick="loadGame('games/1v1lol/index.html')">1V1Lol</button><button onclick="loadGame('games/2048/index.html')">2048</button><button onclick="loadGame('games/adarkroom/browserWarning.html')">Browserwarning</button><button onclick="loadGame('games/adarkroom/index.html')">Adarkroom</button><button onclick="loadGame('games/adarkroom/mobileWarning.html')">Mobilewarning</button><button onclick="loadGame('games/baldisbasics/index.html')">Baldisbasics</button><button onclick="loadGame('games/basketballlegends/index.html')">Basketballlegends</button><button onclick="loadGame('games/basketballstars/index.html')">Basketballstars</button><button onclick="loadGame('games/basketbrosio/index.html')">Basketbrosio</button><button onclick="loadGame('games/basketrandom/index.html')">Basketrandom</button><button onclick="loadGame('games/bitlife/index.html')">Bitlife</button><button onclick="loadGame('games/boxingrandom/game.html')">Game</button><button onclick="loadGame('games/boxingrandom/index.html')">Boxingrandom</button>
     </div>
-
+    <iframe id="game-container" name="game-container" src=""></iframe>
+    <script>
+        function loadGame(url) { document.getElementById('game-container').src = url; }
+    </script>
 </body>
 </html>
-
